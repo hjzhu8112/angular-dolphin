@@ -166,7 +166,7 @@ angular.module('dp.validator',['ng'])
 
                             option = angular.extend({}, dpValidator.config, option);
 
-                            if(!scope[formName][fieldName].$valid){
+                            if(scope[formName][fieldName] && !scope[formName][fieldName].$valid){
                                 dpValidator.showErrorMsg($el,option,scope[formName][fieldName].$error);
                                 return false;
                             }else{
@@ -683,4 +683,4 @@ angular.module('dp.widgets',[])
 
             }
         };
-    }]); 
+    }]);
